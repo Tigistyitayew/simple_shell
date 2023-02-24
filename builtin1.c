@@ -112,4 +112,4 @@ int _myalias(info_t *info)
 	}
 
 	return (0);
-} /* by olasubomi15 and petertbdot*/
+} /* by tigistyitayew*/

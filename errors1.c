@@ -137,4 +137,4 @@ void remove_comments(char *buf)
 			buf[i] = '\0';
 			break;
 		}
-} /* by olasubomi15 and petertbdot*/
+} /* by tigistyitayew*/
