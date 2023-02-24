@@ -19,10 +19,10 @@ int shellby_help(char **args, char __attribute__((__unused__)) **front);
  */
 int (*get_builtin(char *command))(char **args, char **front)
 {
-	builtin_t funcs[] = {
+	builtin_table funcs[] = {
 		{ "exit", shellby_exit },
-		{ "env", shellby_env },
-		{ "setenv", shellby_setenv },
+		{ "env", shellby_help },
+		{ "setenv", shellby_help },
 		{ "unsetenv", shellby_unsetenv },
 		{ "cd", shellby_cd },
 		{ "alias", shellby_alias },
@@ -31,12 +31,12 @@ int (*get_builtin(char *command))(char **args, char **front)
 	};
 	int i;
 
-	for (i = 0; funcs[i].name; i++)
+	for (i = 0; funcs[i], name; i++)
 	{
-		if (_strcmp(funcs[i].name, command) == 0)
+		if (_strcmp(funcs[i], name, command) == 0)
 			break;
 	}
-	return (funcs[i].f);
+	return (funcs[i], f);
 }
 
 /**
@@ -80,7 +80,7 @@ int shellby_exit(char **args, char **front)
 	args -= 1;
 	free_args(args, front);
 	free_env();
-	free_alias_list(aliases);
+	free_alias_list(alias);
 	exit(num);
 }
 
